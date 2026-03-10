@@ -35,29 +35,29 @@ This repository implements a GPT-like Large Language Model from scratch using Py
 
 ## Model Architecture
 
-The implemented GPT model follows the original GPT-2 architecture:
-GPTModel
-├── Token Embedding (50257 × 768)
-├── Position Embedding (1024 × 768)
-├── Dropout (p=0.1)
-├── Transformer Blocks × 12
-│   └── Each Block:
-│       ├── LayerNorm
-│       ├── Multi-Head Attention
-│       │   ├── W_query (768 × 768)
-│       │   ├── W_key (768 × 768)
-│       │   ├── W_value (768 × 768)
-│       │   └── out_proj (768 × 768)
-│       ├── Dropout
-│       ├── Residual Connection
-│       ├── LayerNorm
-│       ├── FeedForward
-│       │   ├── Linear (768 × 3072)
-│       │   ├── GELU Activation
-│       │   └── Linear (3072 × 768)
-│       ├── Dropout
-│       └── Residual Connection
-├── Final LayerNorm
+The implemented GPT model follows the original GPT-2 architecture:\
+GPTModel\
+├── Token Embedding (50257 × 768)\
+├── Position Embedding (1024 × 768)\
+├── Dropout (p=0.1)\
+├── Transformer Blocks × 12\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Each Block:\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── LayerNorm\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Multi-Head Attention\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── W_query (768 × 768)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── W_key (768 × 768)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── W_value (768 × 768)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── out_proj (768 × 768)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Dropout\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Residual Connection\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── LayerNorm\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── FeedForward\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Linear (768 × 3072)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── GELU Activation\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Linear (3072 × 768)\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Dropout\
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Residual Connection\
+├── Final LayerNorm\
 └── Output Head (768 × 50257)
 
 Total Parameters: ~124M (GPT-2 small), ~355M (GPT-2 medium)
